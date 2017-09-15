@@ -4,7 +4,7 @@
   "description": "sample github repository",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/nid-horih/sample-project/issues"
   },
-  "homepage": "https://github.com/nid-horih/sample-project#readme"
+  "homepage": "https://github.com/nid-horih/sample-project#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  }
 }
