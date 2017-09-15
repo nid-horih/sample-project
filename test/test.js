@@ -9,14 +9,27 @@ let assert = chai.assert;
     describe('SampleJS Test', function () {
       it('生成', function () {
         let instance = new Person();
-        assert.strictEqual(instance.name, "annonymous");
+        assert.strictEqual(instance.fullname, "annonymous");
         assert.strictEqual(instance.age, 20);
       });
   
-      it('名前変更', function () {
+      it('姓名を変更', function () {
         let instance = new Person();
-        instance.name = "Taro"
-        assert.strictEqual(instance.name, "Taro");
+        instance.firstname = "Taro"
+        instance.lastname = "Suzuki"
+        assert.strictEqual(instance.fullname, "Taro Suzuki");
+      });
+
+      it('姓のみ変更', function () {
+        let instance = new Person();
+        instance.firstname = "Taro"
+        assert.strictEqual(instance.fullname, "Taro ");
+      });
+
+      it('名のみ変更', function () {
+        let instance = new Person();
+        instance.lastname = "Suzuki"
+        assert.strictEqual(instance.fullname, " Suzuki");
       });
       
       it('年齢変更', function () {
@@ -33,9 +46,10 @@ let assert = chai.assert;
   
       it('自己紹介', function () {
         let instance = new Person();
-        instance.name = "Jiro"
+        instance.firstname = "Jiro"
+        instance.lastname = "Sato"
         instance.age = 24
-        assert.strictEqual("Hello! I'm Jiro! I'm 24 years old.", instance.hello());
+        assert.strictEqual("Hello! I'm Jiro Sato! I'm 24 years old.", instance.hello());
       });
     });
   })();
